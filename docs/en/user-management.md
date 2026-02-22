@@ -10,7 +10,7 @@ As a system administrator, you can create and manage multiple user accounts for 
 
 ## User Roles
 
-RS-Core has two user roles:
+FileUni has two user roles:
 
 ### Administrator
 - Has highest system privileges

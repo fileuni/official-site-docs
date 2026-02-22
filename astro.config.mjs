@@ -6,7 +6,7 @@ export default defineConfig({
   integrations: [
     starlight({
       title: 'FileUni Docs',
-      description: 'Official documentation for FileUni and RS-Core.',
+      description: 'Official documentation for FileUni.',
       logo: {
         light: '/src/assets/logo-light.svg',
         dark: '/src/assets/logo-dark.svg',

@@ -1,12 +1,12 @@
 ---
 title: File Management
-description: Learn how to manage your files with RS-Core
+description: Learn how to manage your files with FileUni
 order: 4
 ---
 
 # File Management Guide
 
-The RS-Core file management interface is designed to be simple and intuitive, just like using folders on your computer.
+The FileUni file management interface is designed to be simple and intuitive, just like using folders on your computer.
 
 ## Interface Layout
 

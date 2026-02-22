@@ -6,7 +6,7 @@ order: 5
 
 # File Sharing Guide
 
-RS-Core provides flexible file sharing capabilities, allowing you to share files with others securely and conveniently.
+FileUni provides flexible file sharing capabilities, allowing you to share files with others securely and conveniently.
 
 ## Sharing Methods Overview
 
@@ -74,14 +74,14 @@ When enabled, files can be downloaded via direct link:
 After clicking "Copy Full Share Information", you'll get text like this:
 
 ```
-[RS-Core File Share]
+[FileUni File Share]
 File: Annual Report.pdf
 Share Link: http://your-server.com/ui/share?id=XXXXXX
 Password: 1234
 
 [Direct Link Info]
 Direct URL: http://your-server.com/api/direct/XXXXXX/
-Username: rs-core
+Username: fileuni
 Password: 1234
 ```
 
