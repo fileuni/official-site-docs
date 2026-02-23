@@ -17,7 +17,7 @@ export default defineConfig({
     starlight({
       title: 'FileUni Docs',
       description: 'Official documentation for FileUni.',
-      favicon: 'https://fileuni.com/favicon.svg',
+      favicon: '//fileuni.com/favicon.svg',
       locales: {
         root: {
           label: 'English',
