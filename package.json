@@ -6,11 +6,10 @@
   "scripts": {
     "dev": "XDG_CONFIG_HOME=.wrangler-home astro dev",
     "build": "XDG_CONFIG_HOME=.wrangler-home astro build",
-    "build:cf": "bun run build",
     "preview": "XDG_CONFIG_HOME=.wrangler-home astro preview",
-    "pages:deploy": "bun run build:cf && XDG_CONFIG_HOME=.wrangler-home wrangler pages deploy dist --project-name fileuni-docs",
-    "deploy:cf": "bun run pages:deploy"
+    "deploy": "XDG_CONFIG_HOME=.wrangler-home wrangler deploy"
   },
+
   "dependencies": {
     "@astrojs/cloudflare": "^12.1.2",
     "astro": "^5.2.5",

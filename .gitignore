@@ -39,3 +39,4 @@ config-rs-core.toml.*
 !.env.example
 .direnv/
 node_modules
+.wrangler*
