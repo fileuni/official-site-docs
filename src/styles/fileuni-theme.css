@@ -132,16 +132,85 @@
   filter: brightness(0.95);
 }
 
-starlight-theme-select label,
-starlight-lang-select label {
-  border: 1px solid var(--sl-color-gray-6);
-  border-radius: 0.55rem;
-  padding-inline: 0.3rem;
+starlight-theme-select,
+starlight-lang-select {
+  display: inline-flex;
+  align-items: center;
 }
 
-starlight-theme-select label:hover,
-starlight-lang-select label:hover {
+.fu-theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.16rem;
+  padding: 0.2rem;
+  border: 1px solid var(--sl-color-gray-6);
+  border-radius: 0.58rem;
+  background: transparent;
+}
+
+.fu-theme-toggle:hover {
   border-color: var(--sl-color-gray-5);
+}
+
+.fu-theme-option {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.4rem;
+  height: 1.4rem;
+  border: 0;
+  border-radius: 0.4rem;
+  background: transparent;
+  color: var(--sl-color-gray-3);
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.fu-theme-option svg {
+  font-size: 0.82rem;
+}
+
+.fu-theme-option:hover {
+  background: var(--sl-color-gray-7);
+  color: var(--sl-color-gray-1);
+}
+
+.fu-theme-option.is-active {
+  background: var(--sl-color-accent);
+  color: #ffffff;
+}
+
+.fu-theme-option:focus-visible,
+.fu-lang-toggle:focus-visible {
+  outline: 2px solid var(--sl-color-accent);
+  outline-offset: 2px;
+}
+
+.fu-lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.34rem;
+  min-height: 2rem;
+  border: 1px solid var(--sl-color-gray-6);
+  border-radius: 0.58rem;
+  padding: 0.38rem 0.52rem;
+  background: transparent;
+  color: var(--sl-color-gray-2);
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease, background-color 0.2s ease;
+}
+
+.fu-lang-toggle svg {
+  font-size: 0.82rem;
+}
+
+.fu-lang-toggle:hover {
+  border-color: var(--sl-color-gray-5);
+  color: var(--sl-color-gray-1);
+  background: var(--sl-color-gray-7);
 }
 
 @media (min-width: 50rem) {
