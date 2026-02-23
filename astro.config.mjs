@@ -32,7 +32,7 @@ export default defineConfig({
       sidebar: [
         {
           label: 'Back to FileUni',
-          link: 'https://fileuni.com',
+          link: 'https://www.fileuni.com',
         },
         {
           label: 'Documentation',

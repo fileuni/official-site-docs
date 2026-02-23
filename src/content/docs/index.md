@@ -10,9 +10,9 @@ Welcome to FileUni docs.
 
 ## Quick Links
 
-- [Back to FileUni Website](https://fileuni.com)
-- [User Portal](https://fileuni.com/user/)
-- [Admin Portal](https://fileuni.com/admin/)
+- [Back to FileUni Website](https://www.fileuni.com)
+- [User Portal](https://www.fileuni.com/user/)
+- [Admin Portal](https://www.fileuni.com/admin/)
 
 ## Start Here
 

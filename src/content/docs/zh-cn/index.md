@@ -10,9 +10,9 @@ order: 0
 
 ## 快捷入口
 
-- [返回 FileUni 官网](https://fileuni.com)
-- [用户中心](https://fileuni.com/user/)
-- [管理后台](https://fileuni.com/admin/)
+- [返回 FileUni 官网](https://www.fileuni.com)
+- [用户中心](https://www.fileuni.com/user/)
+- [管理后台](https://www.fileuni.com/admin/)
 
 ## 从这里开始
 
