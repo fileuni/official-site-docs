@@ -8,7 +8,7 @@
     "build": "XDG_CONFIG_HOME=.wrangler-home astro build",
     "build:cf": "bun run build",
     "preview": "XDG_CONFIG_HOME=.wrangler-home astro preview",
-    "pages:deploy": "bun run build:cf && XDG_CONFIG_HOME=.wrangler-home wrangler pages deploy dist",
+    "pages:deploy": "bun run build:cf && XDG_CONFIG_HOME=.wrangler-home wrangler pages deploy dist --project-name fileuni-docs",
     "deploy:cf": "bun run pages:deploy"
   },
   "dependencies": {

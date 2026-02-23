@@ -5,6 +5,9 @@ import cloudflare from '@astrojs/cloudflare';
 export default defineConfig({
   site: 'https://docs.fileuni.com',
   output: 'static',
+  session: {
+    driver: 'null',
+  },
   adapter: cloudflare({
     platformProxy: {
       enabled: true,
