@@ -1,5 +1,4 @@
 ---
-import { Icon } from '@astrojs/starlight/components';
 ---
 
 <script is:inline>
@@ -112,26 +111,21 @@ import { Icon } from '@astrojs/starlight/components';
 
   window.StarlightThemeProvider = {
     updatePickers(theme = storedTheme) {
+      const parsedTheme = parseTheme(theme) || 'auto';
       document.querySelectorAll('starlight-theme-select').forEach((picker) => {
         const select = picker.querySelector('select');
         if (select) {
-          select.value = theme;
+          select.value = parsedTheme;
         }
-        const template = document.querySelector('#theme-icons');
-        const newIcon = template && template.content.querySelector(`.${theme}`);
-        if (newIcon) {
-          const oldIcon = picker.querySelector('svg.label-icon');
-          if (oldIcon) {
-            oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes);
+        picker.querySelectorAll('[data-theme-value]').forEach((option) => {
+          if (!(option instanceof HTMLButtonElement)) {
+            return;
           }
-        }
+          const isActive = option.dataset.themeValue === parsedTheme;
+          option.classList.toggle('is-active', isActive);
+          option.setAttribute('aria-pressed', String(isActive));
+        });
       });
     },
   };
 </script>
-
-<template id="theme-icons">
-  <Icon name="sun" class="light" />
-  <Icon name="moon" class="dark" />
-  <Icon name="laptop" class="auto" />
-</template>

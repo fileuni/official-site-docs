@@ -1,19 +1,29 @@
 ---
-import Select from '@astrojs/starlight/components/Select.astro';
+import { Icon } from '@astrojs/starlight/components';
+
+const options = [
+  { label: Astro.locals.t('themeSelect.light'), value: 'light', icon: 'sun' },
+  { label: Astro.locals.t('themeSelect.dark'), value: 'dark', icon: 'moon' },
+  { label: Astro.locals.t('themeSelect.auto'), value: 'auto', icon: 'laptop' },
+] as const;
 ---
 
 <starlight-theme-select>
-  <Select
-    icon="laptop"
-    label={Astro.locals.t('themeSelect.accessibleLabel')}
-    value="auto"
-    options={[
-      { label: Astro.locals.t('themeSelect.dark'), selected: false, value: 'dark' },
-      { label: Astro.locals.t('themeSelect.light'), selected: false, value: 'light' },
-      { label: Astro.locals.t('themeSelect.auto'), selected: true, value: 'auto' },
-    ]}
-    width="6.25em"
-  />
+  <div class="fu-theme-toggle" role="group" aria-label={Astro.locals.t('themeSelect.accessibleLabel')}>
+    {
+      options.map((option) => (
+        <button
+          type="button"
+          class="fu-theme-option"
+          data-theme-value={option.value}
+          aria-label={option.label}
+          title={option.label}
+        >
+          <Icon name={option.icon} />
+        </button>
+      ))
+    }
+  </div>
 </starlight-theme-select>
 
 <script is:inline>
@@ -61,10 +71,13 @@ import Select from '@astrojs/starlight/components/Select.astro';
     constructor() {
       super();
       onThemeChange(getCookieTheme() || 'auto');
-      this.querySelector('select')?.addEventListener('change', (event) => {
-        if (event.currentTarget instanceof HTMLSelectElement) {
-          onThemeChange(event.currentTarget.value);
-        }
+      this.querySelectorAll('[data-theme-value]').forEach((button) => {
+        button.addEventListener('click', (event) => {
+          if (!(event.currentTarget instanceof HTMLButtonElement)) {
+            return;
+          }
+          onThemeChange(event.currentTarget.dataset.themeValue || 'auto');
+        });
       });
     }
   }

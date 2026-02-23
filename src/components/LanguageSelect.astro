@@ -1,5 +1,5 @@
 ---
-import Select from '@astrojs/starlight/components/Select.astro';
+import { Icon } from '@astrojs/starlight/components';
 
 const currentPath = Astro.url.pathname;
 const isZhPath = currentPath === '/zh-cn' || currentPath.startsWith('/zh-cn/');
@@ -7,30 +7,19 @@ const currentLang = isZhPath ? 'zh' : 'en';
 ---
 
 <starlight-lang-select>
-  <Select
-    icon="translate"
-    label={Astro.locals.t('languageSelect.accessibleLabel')}
-    value={currentLang}
-    options={[
-      { value: 'en', selected: currentLang === 'en', label: 'EN' },
-      { value: 'zh', selected: currentLang === 'zh', label: 'ZH' },
-    ]}
-    width="4.8em"
-  />
+  <button
+    type="button"
+    class="fu-lang-toggle"
+    data-current-lang={currentLang}
+    aria-label={Astro.locals.t('languageSelect.accessibleLabel')}
+  >
+    <span class="fu-lang-code">{currentLang.toUpperCase()}</span>
+    <Icon name="translate" />
+  </button>
 </starlight-lang-select>
 
 <script>
   const LANG_COOKIE_KEY = 'lang';
-
-  const normalizeLang = (value) => {
-    if (value === 'en' || value === 'zh') {
-      return value;
-    }
-    if (value === 'zh-cn' || value === 'zh-CN') {
-      return 'zh';
-    }
-    return null;
-  };
 
   const toZhPath = (pathname) => {
     if (pathname === '/zh-cn' || pathname.startsWith('/zh-cn/')) {
@@ -56,33 +45,21 @@ const currentLang = isZhPath ? 'zh' : 'en';
   class StarlightLanguageSelect extends HTMLElement {
     constructor() {
       super();
-      const select = this.querySelector('select');
-      if (!select) {
+      const button = this.querySelector('button.fu-lang-toggle');
+      if (!button) {
         return;
       }
 
-      select.addEventListener('change', (event) => {
-        if (!(event.currentTarget instanceof HTMLSelectElement)) {
-          return;
-        }
-
-        const targetLang = normalizeLang(event.currentTarget.value) || 'en';
+      button.addEventListener('click', () => {
+        const currentLang =
+          window.location.pathname === '/zh-cn' || window.location.pathname.startsWith('/zh-cn/')
+            ? 'zh'
+            : 'en';
+        const targetLang = currentLang === 'zh' ? 'en' : 'zh';
         window.FileUniPreferenceCookie?.write?.(LANG_COOKIE_KEY, targetLang);
         const targetPath =
           targetLang === 'zh' ? toZhPath(window.location.pathname) : toEnPath(window.location.pathname);
         window.location.pathname = targetPath;
-      });
-
-      window.addEventListener('pageshow', (event) => {
-        if (!event.persisted) {
-          return;
-        }
-        const selectedOption = select.querySelector('option[selected]');
-        const markupSelectedIndex =
-          selectedOption instanceof HTMLOptionElement ? selectedOption.index : undefined;
-        if (markupSelectedIndex !== undefined && markupSelectedIndex !== select.selectedIndex) {
-          select.selectedIndex = markupSelectedIndex;
-        }
       });
     }
   }
