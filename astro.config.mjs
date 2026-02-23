@@ -17,11 +17,7 @@ export default defineConfig({
     starlight({
       title: 'FileUni Docs',
       description: 'Official documentation for FileUni.',
-      logo: {
-        light: '/src/assets/logo-light.svg',
-        dark: '/src/assets/logo-dark.svg',
-        replacesTitle: false,
-      },
+      favicon: 'https://fileuni.com/favicon.svg',
       locales: {
         root: {
           label: 'English',
@@ -35,13 +31,20 @@ export default defineConfig({
       sidebar: [
         {
           label: 'Back to FileUni',
-          link: 'https://www.fileuni.com',
+          link: 'https://fileuni.com',
         },
         {
           label: 'Documentation',
           autogenerate: { directory: '.' },
         },
       ],
+      components: {
+        Header: './src/components/Header.astro',
+        SiteTitle: './src/components/SiteTitle.astro',
+        ThemeProvider: './src/components/ThemeProvider.astro',
+        ThemeSelect: './src/components/ThemeSelect.astro',
+        LanguageSelect: './src/components/LanguageSelect.astro',
+      },
       editLink: {
         baseUrl: 'https://github.com/fileuni/official-site-docs/edit/main/src/content/docs/',
       },

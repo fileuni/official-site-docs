@@ -1,0 +1,92 @@
+---
+import Select from '@astrojs/starlight/components/Select.astro';
+
+const currentPath = Astro.url.pathname;
+const isZhPath = currentPath === '/zh-cn' || currentPath.startsWith('/zh-cn/');
+const currentLang = isZhPath ? 'zh' : 'en';
+---
+
+<starlight-lang-select>
+  <Select
+    icon="translate"
+    label={Astro.locals.t('languageSelect.accessibleLabel')}
+    value={currentLang}
+    options={[
+      { value: 'en', selected: currentLang === 'en', label: 'EN' },
+      { value: 'zh', selected: currentLang === 'zh', label: 'ZH' },
+    ]}
+    width="4.8em"
+  />
+</starlight-lang-select>
+
+<script>
+  const LANG_COOKIE_KEY = 'lang';
+
+  const normalizeLang = (value) => {
+    if (value === 'en' || value === 'zh') {
+      return value;
+    }
+    if (value === 'zh-cn' || value === 'zh-CN') {
+      return 'zh';
+    }
+    return null;
+  };
+
+  const toZhPath = (pathname) => {
+    if (pathname === '/zh-cn' || pathname.startsWith('/zh-cn/')) {
+      return pathname;
+    }
+    if (pathname === '/') {
+      return '/zh-cn/';
+    }
+    return `/zh-cn${pathname}`;
+  };
+
+  const toEnPath = (pathname) => {
+    if (pathname === '/zh-cn') {
+      return '/';
+    }
+    if (pathname.startsWith('/zh-cn/')) {
+      const unprefixed = pathname.slice('/zh-cn'.length);
+      return unprefixed || '/';
+    }
+    return pathname;
+  };
+
+  class StarlightLanguageSelect extends HTMLElement {
+    constructor() {
+      super();
+      const select = this.querySelector('select');
+      if (!select) {
+        return;
+      }
+
+      select.addEventListener('change', (event) => {
+        if (!(event.currentTarget instanceof HTMLSelectElement)) {
+          return;
+        }
+
+        const targetLang = normalizeLang(event.currentTarget.value) || 'en';
+        window.FileUniPreferenceCookie?.write?.(LANG_COOKIE_KEY, targetLang);
+        const targetPath =
+          targetLang === 'zh' ? toZhPath(window.location.pathname) : toEnPath(window.location.pathname);
+        window.location.pathname = targetPath;
+      });
+
+      window.addEventListener('pageshow', (event) => {
+        if (!event.persisted) {
+          return;
+        }
+        const selectedOption = select.querySelector('option[selected]');
+        const markupSelectedIndex =
+          selectedOption instanceof HTMLOptionElement ? selectedOption.index : undefined;
+        if (markupSelectedIndex !== undefined && markupSelectedIndex !== select.selectedIndex) {
+          select.selectedIndex = markupSelectedIndex;
+        }
+      });
+    }
+  }
+  if (!customElements.get('starlight-lang-select')) {
+    customElements.define('starlight-lang-select', StarlightLanguageSelect);
+  }
+</script>
