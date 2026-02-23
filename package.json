@@ -7,7 +7,7 @@
     "dev": "XDG_CONFIG_HOME=.wrangler-home astro dev",
     "build": "XDG_CONFIG_HOME=.wrangler-home astro build",
     "preview": "XDG_CONFIG_HOME=.wrangler-home astro preview",
-    "deploy": "XDG_CONFIG_HOME=.wrangler-home wrangler deploy"
+    "deploy": "npx wrangler deploy"
   },
 
   "dependencies": {
