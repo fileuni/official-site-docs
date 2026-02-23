@@ -4,4 +4,4 @@ compatibility_flags = ["nodejs_compat"]
 pages_build_output_dir = "./dist"
 
 [vars]
-SITE_URL = "https://docs.fileuni.com"
+SITE_URL = "https://docs.fileuni.com/"
