@@ -1,43 +1,37 @@
 # official-site-docs
 
-This repository hosts the FileUni documentation site built with Astro + Starlight.
+Public Starlight documentation site for FileUni.
 
-## Features
+## Overview
 
-- Starlight docs site
-- Multi-language support (`English` + `简体中文`)
-- Dark / light theme switch (built-in Starlight UI)
-- "Edit this page" links to this public repository
-- Static generation output for Cloudflare Pages Git deployment
+- This repository owns docs rendering, docs theme, and docs navigation.
+- Documentation pages are versioned in `src/content/docs`.
+- Chinese docs use the `zh-cn` locale folder to align with Starlight locale routing.
+- Theme mode switch (light/dark) and locale switch are provided by Starlight UI.
 
-## Local development
+## Key Paths
 
-```bash
-bun install
-bun run dev
-```
+- `astro.config.mjs`: Starlight site configuration, locales, sidebar, and edit links.
+- `wrangler.toml`: Cloudflare Pages/Workers deployment configuration.
+- `src/content.config.ts`: Astro content collections with Starlight docs schema.
+- `src/content/docs`: English documentation pages (root locale).
+- `src/content/docs/zh-cn`: Simplified Chinese documentation pages.
+- `src/assets/logo-light.svg` and `src/assets/logo-dark.svg`: Docs site logos.
 
-## Build
+## Interactions And Responsibilities
 
-```bash
-bun run build
-```
+- `official-site-docs` is responsible for docs build and docs deploy output.
+- `official-site-private` is responsible for private product website and account workflows.
+- `official-site-private` links to `https://docs.fileuni.com` and does not embed docs build artifacts.
 
-Build output directory: `dist`
+## Constraints
 
-## Cloudflare Pages deployment (Git)
+- Keep docs slugs stable to avoid broken inbound links from product pages.
+- Use Starlight frontmatter schema-compatible metadata for all docs pages.
+- Do not commit secrets, tokens, keys, or private endpoints.
 
-Use these settings in Cloudflare Pages:
+## Build And Deploy
 
-- Framework preset: `Astro`
-- Build command: `bun install && bun run build`
-- Build output directory: `dist`
-- Node.js version: `20` (recommended)
-
-## Custom domain
-
-Bind the custom domain in Cloudflare Pages project settings:
-
-- `docs.fileuni.com`
-
-This repository is public. Do not commit secrets, private keys, tokens, or private endpoints.
+- Local dev: `bun run dev`
+- Build: `bun run build`
+- Cloudflare deploy: `bun run deploy:cf`

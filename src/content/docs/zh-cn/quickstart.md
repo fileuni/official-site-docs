@@ -6,7 +6,7 @@ order: 2
 
 # 快速开始指南
 
-本指南将帮助您在几分钟内搭建起 RS-Core 文件服务器。
+本指南将帮助您在几分钟内搭建起 FileUni 文件服务器。
 
 ## 安装方式
 
@@ -36,10 +36,10 @@ curl -fsSL https://fileuni.com/install.sh | sh
 
 ```bash
 docker run -d \
-  --name RS-Core \
+  --name FileUni \
   -p 19000:19000 \
   -v /your/data/path:/data \
-  rs-core/RS-Core:latest
+  fileuni/FileUni:latest
 ```
 
 ## 首次配置向导
@@ -84,7 +84,7 @@ http://localhost:19000/ui
 如果是在其他设备上访问，将 `localhost` 替换为服务器 IP 地址。
 
 ### 手机 APP 访问
-RS-Core 支持标准协议，您可以使用以下 APP：
+FileUni 支持标准协议，您可以使用以下 APP：
 - **Android**：Solid Explorer、MiXplorer
 - **iOS**：Documents、FileBrowser
 
@@ -112,7 +112,7 @@ RS-Core 支持标准协议，您可以使用以下 APP：
 ## 常见问题
 
 **Q: 忘记管理员密码怎么办？**
-A: 在服务器上运行命令：`RS-Core -a newpassword` 来重置密码
+A: 在服务器上运行命令：`FileUni -a newpassword` 来重置密码
 
 **Q: 如何在外网访问？**
 A: 需要配置内网穿透或 DDNS，具体请参考[远程访问指南](./remote-access)
@@ -127,4 +127,4 @@ A: 建议定期备份存储文件夹，或使用系统的导出功能
 - 💬 加入社区讨论
 - 🐛 提交问题反馈
 
-接下来，您可以了解 RS-Core 的更多[功能特性](./features)。
+接下来，您可以了解 FileUni 的更多[功能特性](./features)。

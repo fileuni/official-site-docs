@@ -1,21 +1,24 @@
 ---
 title: FileUni Documentation
-description: Official docs for RS-Core and FileUni products.
-template: splash
-hero:
-  tagline: Build your private cloud with RS-Core.
-  actions:
-    - text: Quick Start
-      link: /quickstart/
-      icon: right-arrow
-    - text: GitHub Repository
-      link: https://github.com/fileuni/official-site-docs
-      icon: external
+description: Official docs for FileUni.
+order: 0
 ---
 
-## What you can find here
+# FileUni Documentation
 
-- Product introduction and core features
-- Quick setup and deployment references
-- File management and sharing guides
-- User and permission management
+Welcome to FileUni docs.
+
+## Quick Links
+
+- [Back to FileUni Website](https://fileuni.com)
+- [User Portal](https://fileuni.com/user/)
+- [Admin Portal](https://fileuni.com/admin/)
+
+## Start Here
+
+- [Introduction](./introduction)
+- [Quick Start](./quickstart)
+- [Features](./features)
+- [File Management](./file-management)
+- [Sharing](./sharing)
+- [User Management](./user-management)

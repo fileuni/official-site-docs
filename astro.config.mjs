@@ -1,8 +1,15 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
+import cloudflare from '@astrojs/cloudflare';
 
 export default defineConfig({
   site: 'https://docs.fileuni.com',
+  output: 'static',
+  adapter: cloudflare({
+    platformProxy: {
+      enabled: true,
+    },
+  }),
   integrations: [
     starlight({
       title: 'FileUni Docs',
@@ -24,19 +31,23 @@ export default defineConfig({
       },
       sidebar: [
         {
+          label: 'Back to FileUni',
+          link: 'https://fileuni.com',
+        },
+        {
           label: 'Documentation',
           autogenerate: { directory: '.' },
         },
       ],
       editLink: {
-        baseUrl: 'https://github.com/fileuni/official-site-docs/edit/main/',
+        baseUrl: 'https://github.com/fileuni/official-site-docs/edit/main/src/content/docs/',
       },
       social: {
         github: 'https://github.com/fileuni/official-site-docs',
       },
       pagination: true,
       lastUpdated: true,
-      customCss: [],
+      customCss: ['./src/styles/fileuni-theme.css'],
     }),
   ],
 });

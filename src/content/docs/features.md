@@ -1,12 +1,12 @@
 ---
 title: Features
-description: Learn about RS-Core's core capabilities and advantages
+description: Learn about FileUni's core capabilities and advantages
 order: 3
 ---
 
 # Features
 
-RS-Core provides a complete file management solution, making your data management more efficient and secure.
+FileUni provides a complete file management solution, making your data management more efficient and secure.
 
 ## 📁 File Management
 
@@ -26,7 +26,7 @@ View common files without downloading:
 ## 🔗 Multi-Device Access
 
 ### Access Anywhere
-RS-Core supports multiple access methods for different scenarios:
+FileUni supports multiple access methods for different scenarios:
 
 | Access Method | Suitable For | Characteristics |
 |--------------|--------------|-----------------|
@@ -44,7 +44,7 @@ RS-Core supports multiple access methods for different scenarios:
 ## 🔐 Security Protection
 
 ### Multi-Layer Protection
-Like a bank vault, RS-Core uses multi-layer security:
+Like a bank vault, FileUni uses multi-layer security:
 
 1. **Account Password**: First line of defense against unauthorized access
 2. **Access Control**: Admins can restrict user permissions

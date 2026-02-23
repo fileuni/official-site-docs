@@ -1,21 +1,24 @@
 ---
 title: FileUni 文档中心
-description: RS-Core 与 FileUni 产品官方文档。
-template: splash
-hero:
-  tagline: 用 RS-Core 构建你的私有云。
-  actions:
-    - text: 快速开始
-      link: /zh-cn/quickstart/
-      icon: right-arrow
-    - text: GitHub 仓库
-      link: https://github.com/fileuni/official-site-docs
-      icon: external
+description: FileUni 官方文档。
+order: 0
 ---
 
-## 你可以在这里找到
+# FileUni 文档中心
 
-- 产品介绍与核心功能
-- 快速安装与部署说明
-- 文件管理与分享操作指南
-- 用户与权限管理文档
+欢迎使用 FileUni 文档。
+
+## 快捷入口
+
+- [返回 FileUni 官网](https://fileuni.com)
+- [用户中心](https://fileuni.com/user/)
+- [管理后台](https://fileuni.com/admin/)
+
+## 从这里开始
+
+- [产品介绍](./introduction)
+- [快速开始](./quickstart)
+- [核心功能](./features)
+- [文件管理](./file-management)
+- [文件分享](./sharing)
+- [用户管理](./user-management)

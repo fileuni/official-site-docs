@@ -6,7 +6,7 @@ order: 2
 
 # Quick Start Guide
 
-This guide will help you set up your RS-Core file server in just a few minutes.
+This guide will help you set up your FileUni file server in just a few minutes.
 
 ## Installation Methods
 
@@ -36,10 +36,10 @@ If you're familiar with Docker, use this command:
 
 ```bash
 docker run -d \
-  --name RS-Core \
+  --name FileUni \
   -p 19000:19000 \
   -v /your/data/path:/data \
-  rs-core/RS-Core:latest
+  fileuni/fileuni:latest
 ```
 
 ## First-Time Setup Wizard
@@ -73,7 +73,7 @@ Choose based on your device's performance:
 
 ## Access Your Server
 
-After configuration, you can access RS-Core in several ways:
+After configuration, you can access FileUni in several ways:
 
 ### Web Browser
 Open your browser and enter:
@@ -84,7 +84,7 @@ http://localhost:19000/ui
 If accessing from another device, replace `localhost` with the server IP address.
 
 ### Mobile Apps
-RS-Core supports standard protocols. You can use these apps:
+FileUni supports standard protocols. You can use these apps:
 - **Android**: Solid Explorer, MiXplorer
 - **iOS**: Documents, FileBrowser
 
@@ -112,7 +112,7 @@ Connect using WebDAV or SFTP protocol, enter the server address and credentials.
 ## FAQ
 
 **Q: Forgot admin password?**
-A: Run on the server: `RS-Core -a newpassword` to reset the password
+A: Run on the server: `fileuni -a newpassword` to reset the password
 
 **Q: How to access from outside my network?**
 A: You need to configure port forwarding or DDNS. See [Remote Access Guide](./remote-access)
@@ -127,4 +127,4 @@ Need help? You can:
 - 💬 Join community discussions
 - 🐛 Submit feedback
 
-Next, learn more about RS-Core [Features](./features).
+Next, learn more about FileUni [Features](./features).

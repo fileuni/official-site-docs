@@ -6,7 +6,7 @@ order: 5
 
 # 文件分享指南
 
-RS-Core 提供了灵活的文件分享功能，让您可以安全、便捷地与他人共享文件。
+FileUni 提供了灵活的文件分享功能，让您可以安全、便捷地与他人共享文件。
 
 ## 分享方式概览
 
@@ -74,14 +74,14 @@ RS-Core 提供了灵活的文件分享功能，让您可以安全、便捷地与
 点击「复制完整分享信息」后，您会得到如下格式的文本：
 
 ```
-[RS-Core 文件分享]
+[FileUni 文件分享]
 文件: 年度报告.pdf
 分享链接: http://your-server.com/ui/share?id=XXXXXX
 提取密码: 1234
 
 [直链信息]
 直链地址: http://your-server.com/api/direct/XXXXXX/
-账号: rs-core
+账号: fileuni
 密码: 1234
 ```
 

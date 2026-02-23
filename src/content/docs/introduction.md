@@ -1,14 +1,14 @@
 ---
 title: Introduction
-description: Learn what RS-Core is and how it helps you manage your files
+description: Learn what FileUni is and how it helps you manage your files
 order: 1
 ---
 
-# Introduction to RS-Core
+# Introduction to FileUni
 
-## What is RS-Core?
+## What is FileUni?
 
-RS-Core is a **personal file management system** designed for users who want to build their own cloud storage on their own devices.
+FileUni is a **personal file management system** designed for users who want to build their own cloud storage on their own devices.
 
 Imagine having a smart filing cabinet that can:
 - 📁 **Centralized Storage**: Keep all your files in one secure place
@@ -49,7 +49,7 @@ Imagine having a smart filing cabinet that can:
 
 ## Comparison with Traditional Cloud Storage
 
-| Feature | Traditional Cloud | RS-Core |
+| Feature | Traditional Cloud | FileUni |
 |---------|------------------|----------|
 | Data Ownership | Stored on provider's servers | Stored on your own device |
 | Privacy Control | Provider may access files | Completely under your control |
@@ -63,7 +63,7 @@ Imagine having a smart filing cabinet that can:
 Automatically back up photos from your phone to your home device, freeing up phone space while preserving precious memories.
 
 ### 🎬 Home Theater
-Store movies and music on RS-Core, accessible to the whole family on any device.
+Store movies and music on FileUni, accessible to the whole family on any device.
 
 ### 📂 Work Collaboration
 Small teams share project files, everyone sees the latest version—no more emailing files back and forth.
@@ -73,4 +73,4 @@ Archive files you don't use often but don't want to delete, accessible whenever 
 
 ## Next Steps
 
-Ready to get started? Check out the [Quick Start Guide](./quickstart) to learn how to install and configure RS-Core.
+Ready to get started? Check out the [Quick Start Guide](./quickstart) to learn how to install and configure FileUni.

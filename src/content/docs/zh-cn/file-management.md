@@ -1,12 +1,12 @@
 ---
 title: 文件管理
-description: 学习如何使用 RS-Core 管理您的文件
+description: 学习如何使用 FileUni 管理您的文件
 order: 4
 ---
 
 # 文件管理指南
 
-RS-Core 的文件管理界面设计简洁直观，就像使用电脑上的文件夹一样简单。
+FileUni 的文件管理界面设计简洁直观，就像使用电脑上的文件夹一样简单。
 
 ## 界面布局
 
