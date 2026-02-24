@@ -35,7 +35,14 @@ export default defineConfig({
         },
         {
           label: 'Documentation',
-          autogenerate: { directory: '.' },
+          items: [
+            { label: 'Introduction', slug: 'introduction' },
+            { label: 'Quick Start', slug: 'quickstart' },
+            { label: 'Features', slug: 'features' },
+            { label: 'File Management', slug: 'file-management' },
+            { label: 'Sharing', slug: 'sharing' },
+            { label: 'User Management', slug: 'user-management' },
+          ],
         },
       ],
       components: {
