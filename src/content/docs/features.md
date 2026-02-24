@@ -142,6 +142,59 @@ When maintenance is needed:
 - Restrict new file writes
 - Ensure data consistency
 
+## 💾 Ultra-Lightweight Operation
+
+### Minimal Resource Requirements
+FileUni is engineered to run on the most constrained hardware:
+
+| Resource | Minimum | Recommended | Full Features |
+|----------|---------|-------------|---------------|
+| **Memory** | 32MB | 64MB | 2GB+ |
+| **CPU** | Any ARM/x86 | Single-core 1GHz | Multi-core 2GHz+ |
+| **Storage** | 50MB | 200MB | 1GB+ |
+
+### Adaptive Performance Tiers
+
+**Tier 1: Basic Mode (32-64MB RAM)**
+- Core file serving via WebDAV/FTP/SFTP
+- Basic web interface for file browsing
+- Essential user authentication
+- Ideal for: Routers, IoT devices, old phones
+
+**Tier 2: Standard Mode (128MB-1GB RAM)**
+- Full web interface with preview support
+- Multiple concurrent users
+- Background task processing
+- Thumbnail generation
+- Ideal for: Raspberry Pi, old PCs, NAS enclosures
+
+**Tier 3: Enhanced Mode (2GB+ RAM)**
+- Complete feature set enabled
+- Advanced caching and indexing
+- Parallel processing for large files
+- High-concurrency support
+- Ideal for: Dedicated servers, modern PCs
+
+### Zero-Overhead Architecture
+
+Unlike traditional NAS software that requires dedicated hardware:
+
+- **No mandatory RAID setup**: Use existing disks as-is
+- **No reserved partitions**: Install anywhere with free space
+- **No forced services**: Enable only what you need
+- **Minimal background processes**: Resources go to your actual work
+
+### Hassle-Free Migration
+
+Upgrade or move your installation without headaches:
+
+- **No re-partitioning required**: Keep your existing disk layout
+- **Data structure preserved**: Files stay where they are during upgrades
+- **Configuration portability**: Export/import settings easily
+- **Cross-device migration**: Move from router to server seamlessly
+
+---
+
 ## 🚀 Performance Optimization
 
 ### Smart Caching
