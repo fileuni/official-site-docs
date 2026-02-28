@@ -42,6 +42,7 @@ export default defineConfig({
             { label: 'File Management', slug: 'file-management' },
             { label: 'Sharing', slug: 'sharing' },
             { label: 'User Management', slug: 'user-management' },
+            { label: 'Reset Admin Password', slug: 'get-admin-passwd' },
           ],
         },
       ],
